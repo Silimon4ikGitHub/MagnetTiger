@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPositiveItem
 {
-    void ApplyForce(Vector2 direction);
+    void ApplyForce(Vector2 direction, float forse);
 }

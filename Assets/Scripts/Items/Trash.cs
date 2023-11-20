@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour, ICollectable
 {
-    public float attractionForce = 10.0f;
     [SerializeField] private int count = 1;
     [SerializeField] private GameManager manager;
 
@@ -24,8 +23,8 @@ public class Trash : MonoBehaviour, ICollectable
         Destroy(gameObject);
     }
 
-    public void ApplyForce(Vector2 direction)
+    public void ApplyForce(Vector2 direction, float forse)
     {
-        transform.position = Vector2.MoveTowards(transform.position, direction, attractionForce);
+        transform.position = Vector2.MoveTowards(transform.position, direction, forse);
     }
 }

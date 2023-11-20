@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         SubscribeAttract();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Player.MoveUp();
 
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
+            
             Attrackt?.Invoke();
         }
 

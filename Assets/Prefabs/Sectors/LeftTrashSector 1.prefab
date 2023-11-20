@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6301887, g: 0.6301887, b: 0.6301887, a: 0.15686275}
   m_FlipX: 0
@@ -129,9 +129,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash1
       objectReference: {fileID: 0}
+    - target: {fileID: 3718899631060560768, guid: 0a08221377d812844aaf0d734ce8275b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4974200197418894775, guid: 0a08221377d812844aaf0d734ce8275b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4974200197418894775, guid: 0a08221377d812844aaf0d734ce8275b, type: 3}
       propertyPath: m_LocalPosition.y

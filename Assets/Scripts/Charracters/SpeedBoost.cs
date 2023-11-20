@@ -8,6 +8,7 @@ public class SpeedBoost : MonoBehaviour
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _originalSpeed;
     [SerializeField] private float _duration;
+    [SerializeField] private float _foreseOffset = 0.01f;
 
     [SerializeField] private GameManager _manager;
 
@@ -20,6 +21,8 @@ public class SpeedBoost : MonoBehaviour
     {
         _originalSpeed = _manager.Player.speed;
         _manager.Player.speed = _increasedSpeed;
+
+        _manager.Magnet.MagnetForse += _foreseOffset;
 
         SubscribeAttractPositive();
         StartCoroutine(ResetCorutine());
@@ -42,7 +45,7 @@ public class SpeedBoost : MonoBehaviour
             {
                 Debug.Log("here");
                 Vector2 direction = (transform.position);
-                item.ApplyForce(direction);
+                item.ApplyForce(direction, _manager.Magnet.MagnetForse);
             }
         }
     }
@@ -50,6 +53,7 @@ public class SpeedBoost : MonoBehaviour
     IEnumerator ResetCorutine()
     {
         yield return new WaitForSeconds(_duration);
+        _manager.Magnet.MagnetForse -= _foreseOffset;
         ResetSpeed(_originalSpeed);
         UnSubscribeAttractPositive();
     }

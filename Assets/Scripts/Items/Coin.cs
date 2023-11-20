@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, ICollectable, IPositiveItem
 {
-    public float attractionForce = 10.0f;
     [SerializeField] private int count = 1;
     [SerializeField] private GameManager manager;
 
@@ -23,8 +22,8 @@ public class Coin : MonoBehaviour, ICollectable, IPositiveItem
         manager.UpdateScore();
     }
 
-    public void ApplyForce(Vector2 direction)
+    public void ApplyForce(Vector2 direction, float forse)
     {
-        transform.position = Vector2.MoveTowards(transform.position, direction, attractionForce);
+        transform.position = Vector2.MoveTowards(transform.position, direction, forse);
     }
 }
